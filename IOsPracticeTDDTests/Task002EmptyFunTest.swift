@@ -8,7 +8,7 @@
 import XCTest
 @testable import IOsPracticeTDD
 
-final class IOsPracticeTDDTests: XCTestCase {
+final class Task002EmptyFunTest: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
