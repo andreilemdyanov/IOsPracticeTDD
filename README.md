@@ -8,3 +8,6 @@ How To:
 
 task001-numbers Some basic math and throwing errors Soluton on YouTube https://youtu.be/rGUlDRwY5q8
 
+task002-empty-fun Check one dependency empty fun called https://youtu.be/gljvcaT72II
+
+
