@@ -10,4 +10,6 @@ task001-numbers Some basic math and throwing errors Soluton on YouTube https://y
 
 task002-empty-fun Check one dependency empty fun called https://youtu.be/gljvcaT72II
 
+task003-one-arg-fun One argument fun in dependency called https://youtu.be/ALKLheWyZ-Q
+
 
