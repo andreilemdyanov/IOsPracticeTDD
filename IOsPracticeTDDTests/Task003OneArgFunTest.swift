@@ -12,26 +12,37 @@ final class Task003OneArgFunTest: XCTestCase {
 
     func testTask003OneArgFun() throws {
         let analytics: FakeAnalytics = FakeAnalyticsImpl()
-        let viewModel: OnboardingViewModel = OnboardingViewModel(analytics: analytics)
-        viewModel.onboardingIsShown()
-        analytics.assertOnBoardingEventCalled()
+        let viewModel: LoginViewModel = LoginViewModel(analytics: analytics)
+        viewModel.signIn()
+        analytics.assertSendEventCalled(expected: "signIn")
+        viewModel.login()
+        analytics.assertSendEventCalled(expected: "login")
+        analytics.assertSendEventCalled(times: 2)
     }
 }
 
 private protocol FakeAnalytics : Analytics {
     
-    func assertOnBoardingEventCalled()
+    func assertSendEventCalled(expected: String)
+    
+    func assertSendEventCalled(times: Int)
 }
 
 private class FakeAnalyticsImpl : FakeAnalytics {
     
-    private var sendOnboardingEventCalled = false
+    private var names: [String] = []
+    private var index = 0
     
-    func sendOnboardingEvent() {
-        sendOnboardingEventCalled = true
+    func sendEvent(name: String) {
+        names.append(name)
     }
     
-    func assertOnBoardingEventCalled() {
-        XCTAssertTrue(sendOnboardingEventCalled)
+    func assertSendEventCalled(expected: String) {
+        XCTAssertEqual(expected, names[index])
+        index += 1
+    }
+    
+    func assertSendEventCalled(times: Int) {
+        XCTAssertEqual(index, times)
     }
 }
