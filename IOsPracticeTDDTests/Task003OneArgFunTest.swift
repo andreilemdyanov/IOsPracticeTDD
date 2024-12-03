@@ -10,11 +10,12 @@ import XCTest
 
 final class Task003OneArgFunTest: XCTestCase {
 
-    func testTask003OneArgFun() throws {
+    func testTask003OneArgFun() {
         let analytics: FakeAnalytics = FakeAnalyticsImpl()
         let viewModel: LoginViewModel = LoginViewModel(analytics: analytics)
         viewModel.signIn()
         analytics.assertSendEventCalled(expected: "signIn")
+        analytics.assertSendEventCalled(times: 1)
         viewModel.login()
         analytics.assertSendEventCalled(expected: "login")
         analytics.assertSendEventCalled(times: 2)
@@ -43,6 +44,6 @@ private class FakeAnalyticsImpl : FakeAnalytics {
     }
     
     func assertSendEventCalled(times: Int) {
-        XCTAssertEqual(index, times)
+        XCTAssertEqual(names.count, times)
     }
 }
