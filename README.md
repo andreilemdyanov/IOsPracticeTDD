@@ -12,4 +12,5 @@ task002-empty-fun Check one dependency empty fun called https://youtu.be/gljvcaT
 
 task003-one-arg-fun One argument fun in dependency called https://youtu.be/ALKLheWyZ-Q
 
+task-004-observer-pattern Pattern Observer multiple observers https://youtu.be/WeEJmEsDCBw
 
