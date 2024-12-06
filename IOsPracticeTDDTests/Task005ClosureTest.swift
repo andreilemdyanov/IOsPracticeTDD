@@ -21,14 +21,12 @@ final class Task005ClosureTest: XCTestCase {
     }
     
     func testIllegalThrowsError() {
-        let min = -10000000 //but should be Int.min, you can try with that
-        for i in (min)..<1 {
-            do {
-                let x = try Repeatable(times: i)
-                XCTAssertEqual(1, i, "never reaches this line")
-            } catch {
-                XCTAssertEqual(true, error is IllegalStateError)
-            }
+        do {
+            let illegalNumber = Int.random(in: Int.min..<1)
+            let x = try Repeatable(times: illegalNumber)
+            XCTAssertEqual(1, illegalNumber, "never reaches this line")
+        } catch {
+            XCTAssertEqual(true, error is IllegalStateError)
         }
     }
 }
