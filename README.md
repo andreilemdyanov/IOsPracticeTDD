@@ -14,3 +14,5 @@ task003-one-arg-fun One argument fun in dependency called https://youtu.be/ALKLh
 
 task-004-observer-pattern Pattern Observer multiple observers https://youtu.be/WeEJmEsDCBw
 
+task005-closure How to test closure in Swift https://youtu.be/C3B56k40dzQ
+
